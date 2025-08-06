@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizzaria Nova</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Topbar com logo, nome e menu juntos -->
+<header class="topbar">
+  <div class="logo-container">
+    <img src="imagens/logo/logotipo.png" class="logo" alt="Logo Pizzaria Nova" />
+  </div>
+  <nav class="nav-right">
+    <a href="#sobre">Sobre</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- Menu inferior (mobile apenas) -->
+<nav class="mobile-bottom-menu">
+  <a href="#sobre">Sobre</a>
+  <a href="#cardapio">Cardápio</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+  <!-- Banner -->
+  <div class="banner">
+    O sabor da Itália na sua mesa!
+  </div>
+
+  <!-- Carrossel -->
+  <div class="carousel-container">
+  <div class="carousel" id="carousel">
+    <img class="carousel-image" src="img1.jpg" alt="Imagem 1" />
+    <img class="carousel-image" src="img2.jpg" alt="Imagem 2" />
+    <img class="carousel-image" src="img3.jpg" alt="Imagem 3" />
+  </div>
+  <div class="carousel-dots" id="carousel-dots"></div>
+</div>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="section">
+    <h2>Sobre Nós</h2>
+    <p>A Pizzaria Nova traz o autêntico sabor italiano com ingredientes selecionados e massas artesanais. Ambiente acolhedor, atendimento de excelência e uma paixão verdadeira pela arte da pizza.</p>
+  </section>
+
+  <!-- Seção Cardápio -->
+  <section id="cardapio" class="section">
+    <h2>Cardápio</h2>
+    <div class="menu">
+      <div class="menu-item">
+        <h3>Margherita</h3>
+        <p>Molho de tomate, mussarela de búfala, manjericão fresco e azeite extra virgem.</p>
+        <p class="price">R$ 39,90</p>
+      </div>
+      <div class="menu-item">
+        <h3>Calabresa</h3>
+        <p>Molho de tomate, queijo mussarela, calabresa fatiada e cebola roxa.</p>
+        <p class="price">R$ 42,00</p>
+      </div>
+      <div class="menu-item">
+        <h3>Quatro Queijos</h3>
+        <p>Mussarela, parmesão, gorgonzola e catupiry sobre molho de tomate especial.</p>
+        <p class="price">R$ 44,00</p>
+      </div>
+      <div class="menu-item">
+        <h3>Portuguesa</h3>
+        <p>Presunto, ovos, cebola, azeitonas, ervilha, pimentão e mussarela.</p>
+        <p class="price">R$ 45,00</p>
+      </div>
+      <div class="menu-item">
+        <h3>Frango com Catupiry</h3>
+        <p>Frango desfiado temperado com catupiry cremoso sobre queijo mussarela.</p>
+        <p class="price">R$ 43,00</p>
+      </div>
+      <div class="menu-item">
+        <h3>Pizza Doce - Nutella</h3>
+        <p>Deliciosa cobertura de Nutella com morangos frescos e raspas de chocolate.</p>
+        <p class="price">R$ 39,00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato" class="section contact">
+    <h2>Contato</h2>
+    <p>📞 (11) 99999-9999</p>
+    <p>📍 Rua da Pizza, 123 - São Paulo - SP</p>
+    <p>📧 contato@pizzarianova.com.br</p>
+    <p>📱 Instagram: @pizzarianova</p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Pizzaria Nova. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do carrossel -->
+  <script src="script.js"></script>
+</body>
+</html>
