@@ -155,44 +155,7 @@
     <div class="logo"><img src="imagens/logo/logotipo.png"></div> <!-- Troque por sua logo ou nome -->
     <h1>Site em construção</h1>
     <p>Estamos preparando algo incrível para você!</p>
-
-    <div class="countdown" id="countdown">
-      <div><span id="dias">00</span><small>Dias</small></div>
-      <div><span id="horas">00</span><small>Horas</small></div>
-      <div><span id="minutos">00</span><small>Minutos</small></div>
-      <div><span id="segundos">00</span><small>Segundos</small></div>
-    </div>
-
-    <div class="email-input">
-      <input type="email" placeholder="digite seu e-mail aqui." />
-      <button>Quero Concorrer</button>
     </div>
   </div>
-
-  <script>
-    // Defina a data do lançamento (ano, mês-1, dia, hora, minuto, segundo)
-    const lancamento = new Date("2025-09-01T00:00:00").getTime();
-
-    const timer = setInterval(() => {
-      const agora = new Date().getTime();
-      const tempoRestante = lancamento - agora;
-
-      if (tempoRestante <= 0) {
-        clearInterval(timer);
-        document.getElementById("countdown").innerHTML = "<p>O site já está no ar!</p>";
-        return;
-      }
-
-      const dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((tempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((tempoRestante % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000);
-
-      document.getElementById("dias").innerText = String(dias).padStart(2, '0');
-      document.getElementById("horas").innerText = String(horas).padStart(2, '0');
-      document.getElementById("minutos").innerText = String(minutos).padStart(2, '0');
-      document.getElementById("segundos").innerText = String(segundos).padStart(2, '0');
-    }, 1000);
-  </script>
 </body>
 </html>

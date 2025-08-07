@@ -190,11 +190,23 @@ a {
 }
 
 /* -------------------- RODAPÉ -------------------- */
-footer {
-  background-color: #222;
-  color: #fff;
+.rodape {
+  background-color: #ca7d09;
+  margin-top: -20px;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start; /* Alinha o conteúdo ao topo */
+  justify-content: center;
+}
+
+.rodape .conteudo {
+  max-width: 800px;
   text-align: center;
-  padding: 20px;
+  a {
+  color: #bb2f04;           /* por exemplo, branco */
+  text-decoration: none;
+}
 }
 
 /* -------------------- RESPONSIVO (MOBILE) -------------------- */
