@@ -1,5 +1,5 @@
 const carousel = document.querySelector('.carousel');
-const images = document.querySelectorAll('.carousel-image');
+const slides = document.querySelectorAll('.carousel-slide');
 let currentIndex = 0;
 
 function updateCarousel() {
@@ -7,14 +7,13 @@ function updateCarousel() {
 }
 
 function nextSlide() {
-  currentIndex = (currentIndex + 1) % images.length;
+  currentIndex = (currentIndex + 1) % slides.length;
   updateCarousel();
 }
 
 function prevSlide() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   updateCarousel();
 }
 
-// Auto-slide a cada 4 segundos
 setInterval(nextSlide, 4000);

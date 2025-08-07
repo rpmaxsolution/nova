@@ -24,31 +24,26 @@
 
 <!-- Menu inferior (mobile apenas) -->
 <nav class="mobile-bottom-menu">
-  <a href="#home">Home</a>
+  <a href="#home"><span></span>Início</a>
   <a href="#cardapio">Cardápio</a>
   <a href="#contato">Contato</a>
 </nav>
 
-  <!-- Banner -->
-  <div class="banner">
-    O sabor da Itália na sua mesa!
-  </div>
-
   <!-- Carrossel -->
   <div class="carousel-container">
   <div class="carousel" id="carousel">
-    <img class="carousel-image" src="img1.jpg" alt="Imagem 1" />
-    <img class="carousel-image" src="img2.jpg" alt="Imagem 2" />
-    <img class="carousel-image" src="img3.jpg" alt="Imagem 3" />
+    <div class="carousel-slide slide-1">
+      <div class="carousel-texto">
+        <h1></h1>
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-slide slide-2"></div>
+    <div class="carousel-slide slide-3"></div>
   </div>
   <div class="carousel-dots" id="carousel-dots"></div>
 </div>
 
-  <!-- Seção Sobre -->
-  <section id="sobre" class="section">
-    <h2>Sobre Nós</h2>
-    <p>A Pizzaria Nova traz o autêntico sabor italiano com ingredientes selecionados e massas artesanais. Ambiente acolhedor, atendimento de excelência e uma paixão verdadeira pela arte da pizza.</p>
-  </section>
 
   <!-- Seção Cardápio -->
   <section id="cardapio" class="section">
@@ -58,11 +53,18 @@
         <h3>Margherita</h3>
         <p>Molho de tomate, mussarela de búfala, manjericão fresco e azeite extra virgem.</p>
         <p class="price">R$ 39,90</p>
+        <div class="pizza-imagem">
+           <img src="imagens/cardapio/margherita.webp" alt="Pizza Margherita">
+        </div>    
       </div>
       <div class="menu-item">
         <h3>Calabresa</h3>
         <p>Molho de tomate, queijo mussarela, calabresa fatiada e cebola roxa.</p>
         <p class="price">R$ 42,00</p>
+         <div class="pizza-imagem">
+         <img src="imagens/cardapio/margherita.webp" alt="Pizza Margherita">
+       </div>    
+      </div>
       </div>
       <div class="menu-item">
         <h3>Quatro Queijos</h3>
@@ -101,7 +103,12 @@
   <div class="conteudo">
     <p>
       Pizzaria Nova todos os direitos reservados. 
-      <br><h5>Powered By<img src="imagens/logo/favicon_rx.png" width="20"><strong><a href="http://www.rpmaxsolution.com.br">RPMAXSolution</strong></h5></a>
+      <br>
+      <h5>
+  Powered By 
+  <img src="imagens/logo/favicon_rx.png" width="20" alt="Logo RPMAX"> 
+  <strong><a href="http://www.rpmaxsolution.com.br" target="_blank">RPMAXSolution</a></strong>
+</h5>
       <br>
       <br>
       <br>
