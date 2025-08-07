@@ -234,10 +234,10 @@ a {
   }
 
   .mobile-bottom-menu a {
-    color: #333;
+    color: #8a0505;
     font-weight: bold;
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: 18px;
   }
 
   @media (min-width: 768px) {
