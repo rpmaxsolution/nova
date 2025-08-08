@@ -68,79 +68,73 @@ a {
 /* -------------------- MENU MOBILE INFERIOR -------------------- */
 .mobile-bottom-menu {
   display: flex;
+  html {
+  scroll-behavior: smooth;
+}
 }
 
 /* -------------------- CARROSSEL -------------------- */
-.carousel-container {
-  position: relative;
+/* ---------- GERAL ---------- */
+.carousel-desktop, .carousel-mobile {
   width: 100vw;
   height: 70vh;
   overflow: hidden;
-  margin-top: 60px;
+  position: relative;
+  margin-top: 130px; /* Ajuste conforme sua topbar */
 }
 
 .carousel {
   display: flex;
   height: 100%;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-slide {
-  min-width: 100vw;
+  min-width: 100%;
   height: 100%;
-  background-size: cover;           /* Mantém proporção e cobre tudo */
-  background-position: justify;      /* Centraliza o conteúdo */
-  background-repeat: no-repeat;     /* Evita repetição */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-
-/* Slides individuais com imagem de fundo */
+/* ---------- SLIDES DESKTOP ---------- */
 .slide-1 {
   background-image: url('imagens/banner/ban.png');
 }
 .slide-2 {
-  background-image: url('imagens/banner/ban.png');
+  background-image: url('imagens/banner/ban2.png');
 }
 .slide-3 {
-  background-image: url('img3.jpg');
+  background-image: url('imagens/banner/ban3.jpg');
 }
 
-/* Texto central apenas no primeiro slide */
-.carousel-texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-  z-index: 5;
-  padding: 20px;
-  pointer-events: none;
+/* ---------- SLIDES MOBILE ---------- */
+.slide-m1 {
+  background-image: url('imagens/banner/mobile1.jpg');
+}
+.slide-m2 {
+  background-image: url('imagens/banner/mobile2.jpg');
 }
 
-.carousel-texto h1 {
-  font-size: 3em;
-  color: #ffcc00;
-}
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 767px) {
+  .carousel-desktop {
+    display: none;
+  }
 
-.carousel-texto p {
-  font-size: 1.5em;
-  color: #ffeaae;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .carousel-container {
+  .carousel-mobile {
+    display: block;
     height: 50vh;
   }
+}
 
-  .carousel-texto h1 {
-    font-size: 2em;
+@media (min-width: 768px) {
+  .carousel-mobile {
+    display: none;
   }
 
-  .carousel-texto p {
-    font-size: 1em;
+  .carousel-desktop {
+    display: block;
   }
 }
 
@@ -162,54 +156,56 @@ a {
 
 /* -------------------- CARDÁPIO -------------------- */
 .menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 
+/* Um item do cardápio */
 .menu-item {
-  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 20px;
+  border: 2px solid #ddd;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
 }
 
-.menu-item h3 {
-  margin-top: 0;
+/* Texto da pizza (fica empilhado à esquerda) */
+.menu-info {
+  flex: 1;
+}
+
+.menu-info h3 {
+  margin: 0;
+  font-size: 1.3em;
   color: #008000;
 }
 
-.menu-item p {
+.menu-info p {
   font-size: 0.95em;
-  color: #666;
+  color: #444;
+  margin: 5px 0;
 }
 
-.menu-item .price {
+.menu-info .price {
   font-weight: bold;
-  color: #ff0000;
+  color: #e60000;
+  font-size: 1.1em;
 }
 
-.menu-item:hover {
-  transform: scale(1.02);
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.pizza-imagem {
-  display: none;
-  margin-top: 10px;
-  text-align: center;
-}
-
+/* Imagem à direita */
 .pizza-imagem img {
-  width: 100%;
-  max-width: 200px;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.menu-item:hover .pizza-imagem {
-  display: block;
+  flex-shrink: 0;
 }
 
 

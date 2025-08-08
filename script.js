@@ -1,19 +1,23 @@
-const carousel = document.querySelector('.carousel');
-const slides = document.querySelectorAll('.carousel-slide');
-let currentIndex = 0;
+// --- Carrossel Desktop ---
+const carouselDesktop = document.getElementById('carousel-desktop');
+if (carouselDesktop) {
+  const slidesDesktop = carouselDesktop.querySelectorAll('.carousel-slide');
+  let currentDesktop = 0;
 
-function updateCarousel() {
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  setInterval(() => {
+    currentDesktop = (currentDesktop + 1) % slidesDesktop.length;
+    carouselDesktop.style.transform = `translateX(-${currentDesktop * 100}%)`;
+  }, 4000);
 }
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateCarousel();
-}
+// --- Carrossel Mobile ---
+const carouselMobile = document.getElementById('carousel-mobile');
+if (carouselMobile) {
+  const slidesMobile = carouselMobile.querySelectorAll('.carousel-slide');
+  let currentMobile = 0;
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  updateCarousel();
+  setInterval(() => {
+    currentMobile = (currentMobile + 1) % slidesMobile.length;
+    carouselMobile.style.transform = `translateX(-${currentMobile * 100}%)`;
+  }, 4000);
 }
-
-setInterval(nextSlide, 4000);
