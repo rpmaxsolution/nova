@@ -161,9 +161,10 @@ a {
 
 .faixa-preco {
   background: linear-gradient(to right, #FFD700, #FFA500);
-  color: #fff;
+  color: #5e1601;
   font-weight: bold;
   padding: 8px 12px;
+  text-align: center;
   border-radius: 8px;
   margin-top: 90px;
 }
