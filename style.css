@@ -113,10 +113,10 @@ a {
 
 /* ---------- SLIDES MOBILE ---------- */
 .slide-m1 {
-  background-image: url('imagens/banner/ban.png');
+  background-image: url('imagens/banner/banmob.png');
 }
 .slide-m2 {
-  background-image: url('imagens/banner/ban2.png');
+  background-image: url('imagens/banner/ban2mob.png');
 }
 
 /* ---------- RESPONSIVIDADE ---------- */
@@ -304,3 +304,27 @@ a {
     height: 250px;
   }
 }
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+}
+
+.whatsapp-button img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-button {
+        bottom: 720px; /* sobe mais no mobile */
+    }
+}
+
