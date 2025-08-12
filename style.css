@@ -83,6 +83,12 @@ a {
   margin-top: 130px; /* Ajuste conforme sua topbar */
 }
 
+@media (max-width: 768px) {
+  .carousel-mobile {
+    margin-top: 200px;
+  }
+}
+
 .carousel {
   display: flex;
   height: 100%;
@@ -104,16 +110,13 @@ a {
 .slide-2 {
   background-image: url('imagens/banner/ban2.png');
 }
-.slide-3 {
-  background-image: url('imagens/banner/ban3.jpg');
-}
 
 /* ---------- SLIDES MOBILE ---------- */
 .slide-m1 {
-  background-image: url('imagens/banner/mobile1.jpg');
+  background-image: url('imagens/banner/ban.png');
 }
 .slide-m2 {
-  background-image: url('imagens/banner/mobile2.jpg');
+  background-image: url('imagens/banner/ban2.png');
 }
 
 /* ---------- RESPONSIVIDADE ---------- */
@@ -142,7 +145,7 @@ a {
 
 /* -------------------- SEÇÕES GERAIS -------------------- */
 .section {
-  padding: 50px 20px;
+  padding: 200px 20px;
   max-width: 1000px;
   margin: auto;
 }
