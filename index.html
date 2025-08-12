@@ -3,159 +3,961 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estamos Chegando!</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: url(imagens/logo/bck.png) no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 700px;
-      box-shadow: 0 0 30px rgba(255, 87, 51, 0.6);
-    }
-
-    .logo {
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #ffbd33;
-    }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    .countdown {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
-  flex-wrap: nowrap; /* Impede que quebre para outra linha */
-  overflow-x: auto;  /* Permite rolagem horizontal, se necessário */
-}
-
-    .countdown div {
-      background-color: rgba(255, 87, 51, 0.9);
-      padding: 20px;
-      border-radius: 10px;
-      min-width: 80px;
-    }
-
-    .countdown div span {
-      display: block;
-      font-size: 2em;
-      font-weight: bold;
-    }
-
-    .countdown div small {
-      font-size: 0.9em;
-    }
-
-    .email-input {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    input[type="email"] {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      width: 250px;
-    }
-
-    button {
-      background-color: #ff5733;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #cc4629;
-    }
-
-    /* Botão flutuante WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #0ad153;
-      color: white;
-      border-radius: 20px;
-      padding: 10px 10px;
-      font-size: 16px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .whatsapp-float:hover {
-      background-color: #1ebc5b;
-    }
-
-    @media (max-width: 600px) {
-  .logo {
-    font-size: 1.8em;
-  }
-
-  h1 {
-    font-size: 1.6em;
-  }
-
-  .countdown div {
-    padding: 8px;
-    min-width: 55px;
-  }
-
-  .countdown div span {
-    font-size: 1.2em;
-  }
-
-  .countdown div small {
-    font-size: 0.7em;
-  }
-}
-  </style>
+  <title>Pizzaria Nova</title>
+  <link rel="icon" type="image/png" href="imagens/logo/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="overlay">
-    <div class="logo"><img src="imagens/logo/logotipo.png"></div> <!-- Troque por sua logo ou nome -->
-    <h1>Site em construção</h1>
-    <p>Estamos preparando algo incrível para você!</p>
+   <div id="topo"></div>
+
+  <!-- Topbar com logo, nome e menu juntos -->
+<header id="topo" class="topbar">
+  <div class="logo-container">
+    <img src="imagens/logo/logotipo.png" class="logo" alt="Logo Pizzaria Nova" />
+  </div>
+  <nav class="nav-right">
+    <a href="#topo">INÍCIO</a> 
+    <a href="#cardapio">CARDÁPIO</a>
+    <a href="#contato">CONTATO</a>
+  </nav>
+</header>
+
+<!-- Menu inferior (mobile apenas) -->
+<nav class="mobile-bottom-menu">
+  <a href="#topo">Início</a>
+  <a href="#cardapio">Cardápio</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+  <!-- Carrossel -->
+<!-- CARROSSEL DESKTOP -->
+<div class="carousel-desktop">
+  <div class="carousel" id="carousel-desktop">
+    <div class="carousel-slide slide-1"></div>
+    <div class="carousel-slide slide-2"></div>
+  </div>
+</div>
+
+<!-- CARROSSEL MOBILE -->
+<div class="carousel-mobile">
+  <div class="carousel" id="carousel-mobile">
+    <div class="carousel-slide slide-m1"></div>
+    <div class="carousel-slide slide-m2"></div>
+  </div>
+</div>
+
+  <!-- SEÇÃO CARDÁPIO -->
+  <section id="cardapio" class="section">
+    <h2>Cardápio</h2>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Alho</h3>
+      <p>Molho de tomate, mussarela e alho frito.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/alhofrito.png" alt="Pizza Alho Frito">
     </div>
   </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Baiana</h3>
+      <p>Molho de tomate, calabresa moída, ovos, cebola e molho de pimenta.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/baiana.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Calabresa</h3>
+      <p>Molho de tomate, calabresa fatiada e cebola.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/calabreza.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Catupiry</h3>
+      <p>Molho de tomate, queijo tipo catupiry.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/catupiry.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Mussarela</h3>
+      <p>Molho de tomate, queijo tipo mussarela.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/mussarela.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Milho Verde</h3>
+      <p>Molho de tomate, milho verde e mussarela.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/milhoverde.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Milho Catu</h3>
+      <p>Molho de tomate, milho verde e queijo tipo catupiry.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/milhocatu.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Margherita</h3>
+      <p>Molho de tomate, mussarela, rodelas de tomate e majericão.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/margherita.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Frango</h3>
+      <p>Molho de tomate, frango desfiado, milho e cebola.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/frango.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Lombo</h3>
+      <p>Molho de tomate, lombinho fatiado e cebola.</p>
+      <p class="price">R$ 50,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/lombo.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Atum</h3>
+      <p>Molho de tomate, atum e cebola.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/atum.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Bauru</h3>
+      <p>Molho de tomate, presunto, mussarela e rodelas de tomate.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/bauru.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Bacon</h3>
+      <p>Molho de tomate, bacon e mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/bacon.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Baiacatu</h3>
+      <p>Molho de tomate, calabresa moída, ovos, cebola e queijo tipo catupiry.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/baiacatu.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Calabresa I</h3>
+      <p>Molho de tomate, calabresa fatiada, cebola e mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/calabresaI.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Calabresa II</h3>
+      <p>Molho de tomate, calabresa fatiada, cebola e queijo tipo catupiry.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/calabresaII.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Caipira</h3>
+      <p>Molho de tomate, frango desfiado milho e mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/caipira.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Dois Queijos</h3>
+      <p>Molho de tomate, mussarela e queijo tipo catupiry.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/doisqueijos.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Escarola I</h3>
+      <p>Molho de tomate, escarola, bacon e mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/escarola1.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Escarola II</h3>
+      <p>Molho de tomate, escarola, bacon e queijo tipo catupiry.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/escarola2.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Francatu</h3>
+      <p>Molho de tomate, frango desfiado e queijo tipo catupiry.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/francatu.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Francheddar</h3>
+      <p>Molho de tomate, frango desfiado e cheddar.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/francheddar.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Lombo I</h3>
+      <p>Molho de tomate, lombinho fatiado, cebola e mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/lombo.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Napolitana</h3>
+      <p>Molho de tomate, mussarela, rodelas de tomate e parmesão.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/napolitana.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Palmito</h3>
+      <p>Molho de tomate, palmito e mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/palmito.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Palmicatu</h3>
+      <p>Molho de tomate, palmito e queijo tipo catupiry.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/palmicatu.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Provolone</h3>
+      <p>Molho de tomate, provolone e rodelas de tomate.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/provolone.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Toscana</h3>
+      <p>Molho de tomate, calabresa moída, cebola e mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/toscana.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Brócolis I</h3>
+      <p>Molho de tomate, brócolis com mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/brocolis1.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Brócolis II</h3>
+      <p>Molho de tomate, brócolis com queijo tipo catupiry.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/brocolis2.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Calabresa à Moda</h3>
+      <p>Molho de tomate, mussarela, queijo tipo catupiry e calabresa.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/calabresamoda.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Champignon</h3>
+      <p>Molho de tomate, champignon, cebola, bacon e mussarela.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/champignon.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Champiry</h3>
+      <p>Molho de tomate, champignon, cebola, bacon e queijo tipo catupiry.</p>
+      <p class="price">R$ 54,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/champiry.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Escaliche</h3>
+      <p>Molho de tomate, escarola, aliche, ovos e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/escaliche.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Francesa</h3>
+      <p>Molho de tomate, mussarela, ovos, presunto, champignon e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/francesa.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Nova</h3>
+      <p>Molho de tomate, lombinho, mussarela, rodelas de tomate e parmesão.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/nova.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Siciliana</h3>
+      <p>Molho de tomate, presunto, bacon, parmesão e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/siciliana.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>três Queijos</h3>
+      <p>Molho de tomate, queijo tipo catupiry, provolone e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/3queijos.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Vegetariana</h3>
+      <p>Molho de tomate, escarola, palmito, milho verde, ervilha e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/vegetariana.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Aliche</h3>
+      <p>Molho de tomate, filé de aliche, mussarela, rodelas de tomate e parmesão.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/aliche.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Atum I</h3>
+      <p>Molho de tomate, atum, cebola e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/atum.png  " alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Atum II</h3>
+      <p>Molho de tomate, atum, cebola e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/atumcatupiry.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Abobrinha</h3>
+      <p>Molho de tomate, abobrinha, mussarela e parmesão.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/abobrinha.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>A Moda da Casa</h3>
+      <p>Molho de tomate, frango desfiado, palmito, mussarela, queijo tipo catupiry e bacon.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/amodacasa.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>A Moda do Pizzaiolo</h3>
+      <p>Molho de tomate, presunto, champignon, bacon e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/modapizzaiolo.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Americana</h3>
+      <p>Molho de tomate, presunto, ervilha, palmito, bacon e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/americana.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Brasileira</h3>
+      <p>Molho de tomate, atum, ovo, milho e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/brasileira.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Carne Seca I</h3>
+      <p>Molho de tomate, carne seca desfiada, cebola e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/carneseca.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Carne Seca II</h3>
+      <p>Molho de tomate, carne seca desfiada, cebola e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/carnesecacatupiry.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Donatello</h3>
+      <p>Molho de tomate, calabresa fatiada, palmito, cebola e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/donatello.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Frango à Moda</h3>
+      <p>Molho de tomate, frango desfiado, palmito, millho e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/frangomoda.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Lombo à Moda</h3>
+      <p>Molho de tomate, lombinho fatiado, palmito, cebola e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/lombomoda.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Namorados</h3>
+      <p>Molho de tomate, palmito, mussarela e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/namorados.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Peruana</h3>
+      <p>Molho de tomate, atum, palmito, cebola e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/peruana.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Peperoni I</h3>
+      <p>Molho de tomate, peperoni fatiado e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/peperoni.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Peperoni II</h3>
+      <p>Molho de tomate, peperoni fatiado e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/peperonicatupiry.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Peito de Peru I</h3>
+      <p>Molho de tomate, peito de peru, cebola e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/peitodeperu1.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Peito de Peru II</h3>
+      <p>Molho de tomate, peito de peru, cebola e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/peitodeperu.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Portuguesa</h3>
+      <p>Molho de tomate, presunto, ovos, palmito, ervilha, cebola e mussarela.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/portuguesa.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Quatro Queijos</h3>
+      <p>Molho de tomate, mussarela, provolone, parmesão e queijo tipo catupiry.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/4queijos.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Rúcula</h3>
+      <p>Molho de tomate, mussarela, rúcula e tomates seco.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/rucula.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>tomate Seco</h3>
+      <p>Molho de tomate, palmito, mussarela e tomates seco.</p>
+      <p class="price">R$ 58,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/tomateseco.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+<h2>Pizzas Doces</h2>
+
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Banana</h3>
+      <p>Banana, leite condensado e canela.</p>
+      <p class="price">R$ 46,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/banadocedeleite.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Banana com Chocolate</h3>
+      <p>Banana e chocolate ao leite.</p>
+      <p class="price">R$ 46,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/banana.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Brigadeiro</h3>
+      <p>Chocolate ao leite e granulado.</p>
+      <p class="price">R$ 46,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/brigadeiro.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Prestígio</h3>
+      <p>Chocolate ao leite e coco ralado.</p>
+      <p class="price">R$ 46,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/prestigio.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+    <div class="menu">
+  <div class="menu-item">
+    <div class="menu-info">
+      <h3>Romeu e Julieta</h3>
+      <p>Goiabada e mussarela. </p>
+      <p class="price">R$ 46,00</p>
+    </div>
+    <div class="pizza-imagem">
+      <img src="imagens/cardapio/pizzas/romeu.png" alt="Pizza Alho Frito">
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato" class="section contact">
+    <h2>Contato</h2>
+    <p>📞 (11) 2705-0041</p>
+    <p>📍 Rua Otávio Alves Dundas, 193 - Vila IVG - São Paulo - SP</p>
+    <p>📧 pizzarianovaivg@gmail.com</p>
+    <p>📱 Instagram: @pizzarianova</p>
+  </section>
+
+  <!-- Rodapé -->
+<footer class="rodape">
+  <div class="conteudo">
+    <p>
+      Pizzaria Nova todos os direitos reservados. 
+      <br>
+      <h5>
+  Powered By 
+  <img src="imagens/logo/favicon_rx.png" width="20" alt="Logo RPMAX"> 
+  <strong><a href="http://www.rpmaxsolution.com.br" target="_blank">RPMAXSolution</a></strong>
+</h5>
+      <br>
+      <br>
+      <br>
+    </p>
+  </div>
+</footer>
+
+  <!-- Script do carrossel -->
+  <script src="script.js"></script>
+  
 </body>
 </html>
